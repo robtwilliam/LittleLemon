@@ -10,8 +10,6 @@ class MenuViewTest(APITestCase):
         Menu.objects.create(title="Muffin",price=3.50)
         
     def test_getall(self):
-        user = User.objects.create_user(username='test',password='test')
-        self.client.force_login(user)
         url = 'http://127.0.0.1:8000/restaurant/menu/'
         response = self.client.get(url)
         menu = Menu.objects.all()
