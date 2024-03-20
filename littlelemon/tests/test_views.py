@@ -2,7 +2,6 @@ from rest_framework.test import APITestCase
 from rest_framework.status import HTTP_200_OK
 from restaurant.views import Menu
 from restaurant.serializers import MenuSerializer
-from django.contrib.auth.models import User
 
 class MenuViewTest(APITestCase):
     def setup(self):
@@ -15,5 +14,4 @@ class MenuViewTest(APITestCase):
         menu = Menu.objects.all()
         serializer = MenuSerializer(menu,many=True)
         self.assertEqual(response.status_code, HTTP_200_OK)
-        print(response.data)
         self.assertEqual(response.data,serializer.data)

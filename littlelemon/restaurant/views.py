@@ -1,7 +1,6 @@
-from django.contrib.auth.models import User
 from django.shortcuts import render
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from .models import Menu, Booking
 from .serializers import MenuSerializer, BookingSerializer
 from rest_framework.viewsets import ModelViewSet
